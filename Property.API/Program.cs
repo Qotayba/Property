@@ -1,3 +1,5 @@
+using Property.Infrastructure.DbContexts;
+
 namespace Property.API
 {
     public class Program
@@ -12,7 +14,7 @@ namespace Property.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddDbContext<PropertyContext>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -21,7 +23,12 @@ namespace Property.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.Use(async (context, next) =>
+            {
+                app.Logger.LogInformation("hello");
+                await next.Invoke(context);
+            }
+            );
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

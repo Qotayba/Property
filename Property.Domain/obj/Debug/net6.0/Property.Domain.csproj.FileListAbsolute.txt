@@ -1,0 +1,14 @@
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\bin\Debug\net6.0\Property.Domain.deps.json
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\bin\Debug\net6.0\Property.Domain.runtimeconfig.json
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\bin\Debug\net6.0\Property.Domain.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\bin\Debug\net6.0\Property.Domain.pdb
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.csproj.AssemblyReference.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.AssemblyInfoInputs.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.AssemblyInfo.cs
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\refint\Property.Domain.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.pdb
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\Property.Domain.genruntimeconfig.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Domain\obj\Debug\net6.0\ref\Property.Domain.dll

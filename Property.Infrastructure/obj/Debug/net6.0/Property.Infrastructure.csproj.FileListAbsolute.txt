@@ -1,0 +1,17 @@
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\bin\Debug\net6.0\Property.Infrastructure.deps.json
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\bin\Debug\net6.0\Property.Infrastructure.runtimeconfig.json
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\bin\Debug\net6.0\Property.Infrastructure.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\bin\Debug\net6.0\Property.Infrastructure.pdb
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\bin\Debug\net6.0\Property.Domain.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\bin\Debug\net6.0\Property.Domain.pdb
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.AssemblyInfo.cs
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.csproj.CopyComplete
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\refint\Property.Infrastructure.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.pdb
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\Property.Infrastructure.genruntimeconfig.cache
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.Infrastructure\obj\Debug\net6.0\ref\Property.Infrastructure.dll
