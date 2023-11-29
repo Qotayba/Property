@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "TlRNmDtRaDX5BdkoXzL7++yQY/6BQ57qWor7Rx2uIFhOkFuudT40V9Xk8BH82UZPxCKQUrHZS3BX2KB6GIgJgg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Qotayba\\Desktop\\courses\\training\\TrainingProject\\Property\\Property.API\\Property.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
