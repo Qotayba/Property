@@ -17,11 +17,11 @@ namespace Property.API.Models
       
         public string Email { get; set; }
       
-        public string Password { get; set; }
+        
         public string Phone { get; set; }
-        //public ICollection<Property> Properties { get; set; } = new List<Property>();
+        
 
-        //public ICollection<RoomReservation> RoomReservations { get; set; } = new List<RoomReservation>();
+        
 
     }
 }
