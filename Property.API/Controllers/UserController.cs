@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Property.API.Models;
-using Property.API.Services;
+
+using Property.Domain.Models.UserDtos;
+using Property.Domain.Services;
 using Property.Domain.Interfaces;
 
 namespace Property.API.Controllers
 {
     [ApiController]
-    [Route("api/users")]
+    [Route("api/users/")]
     public class UserController:ControllerBase
     {
         private readonly UserServices _userServices;
@@ -20,6 +21,35 @@ namespace Property.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers() { 
             return Ok(await _userServices.GetUsersAsync());
+        }
+
+        [HttpGet("{userId}",Name ="GetUser")]
+        public async Task<ActionResult<UserDto>> GetUser(int userId)  { 
+            
+            var userDto= await _userServices.GetUserDtoAsync(userId);
+            if (userDto == null)
+            {
+                return NotFound("User Not Found");
+            }
+            return userDto;
+
+        }
+        [HttpPost]
+        public async Task<ActionResult<UserDto>> CreateUser(UserForCreationDto userForCreationDto)
+        {
+            var userDtoCreated = await _userServices.CreateUser(userForCreationDto);
+            if (userDtoCreated == null) {
+                return BadRequest("Faild to create user ");
+
+            }
+            return CreatedAtRoute("GetUser",
+                new
+                {
+                    userId = userDtoCreated.Id
+                },
+                userDtoCreated
+                ) ; 
+
         }
 
 
