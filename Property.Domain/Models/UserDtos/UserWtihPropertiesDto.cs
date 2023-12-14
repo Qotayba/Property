@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Property.API.Models.PropertyDtos;
 
-namespace Property.API.Models
+namespace Property.Domain.Models.UserDtos
 {
     public class UserWtihPropertiesDto
     {

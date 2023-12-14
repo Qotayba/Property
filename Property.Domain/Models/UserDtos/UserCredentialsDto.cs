@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Property.API.Models
+namespace Property.Domain.Models.UserDtos
 {
     public class UserCredentialsForLoginDto
     {

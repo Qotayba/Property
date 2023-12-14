@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Property.API.Models.PropertyDtos;
+using Property.Domain.Models.PropertyDtos;
 using Property.Domain.Entities;
 using Property.Domain.Interfaces;
 
-namespace Property.API.Services
+namespace Property.Domain.Services
 {
     public class PropertyService
     {

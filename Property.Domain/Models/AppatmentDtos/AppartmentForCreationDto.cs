@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Property.API.Models.AppatmentDtos
+namespace Property.Domain.Models.AppatmentDtos
 {
     public class AppartmentForCreationDto
     {

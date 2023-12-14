@@ -2,10 +2,10 @@
 using Property.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Property.API.Models.RoomDtos;
-using Property.API.Models.AppatmentDtos;
+using Property.Domain.Models.RoomDtos;
+using Property.Domain.Models.AppatmentDtos;
 
-namespace Property.API.Models.PropertyDtos
+namespace Property.Domain.Models.PropertyDtos
 {
     public class PropertyAppartmentRoomsDto
     {
