@@ -62,3 +62,4 @@ C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.API\
 C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.API\obj\Debug\net6.0\ref\Property.API.dll
 C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.API\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Qotayba\Desktop\courses\training\TrainingProject\Property\Property.API\bin\Debug\net6.0\Newtonsoft.Json.dll

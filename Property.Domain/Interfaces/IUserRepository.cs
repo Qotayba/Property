@@ -19,5 +19,6 @@ namespace Property.Domain.Interfaces
         void AddUser(UserEntity user);
         Task<bool> SaveChangesAsync();
 
+
     }
 }

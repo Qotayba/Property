@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hPB/QnCmdhUQ25AT6Hn3loYks+FRlGamFSPl0aLx4sWlweuckmmsghegR0321W9n0P5Yd73YgDmsNgBtGDybzA==",
+  "dgSpecHash": "pNUEOUzLm1r75i6VNzv1KJZ4ycDPrqIWEAdbCs8C2VXWxQR+hr+bnIgw9xvMA7NfX+NubaZ3+3s/gv82Ea5MJg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Qotayba\\Desktop\\courses\\training\\TrainingProject\\Property\\Property.Domain\\Property.Domain.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

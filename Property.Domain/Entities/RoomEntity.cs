@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Property.Domain.Entities
 {
-    public class RoomEntity
+    public class RoomEntity :SeconderyEntity
     {
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        
+       
         [ForeignKey("PropertyId")]
         public PropertyEntity? Property { get; set; }
         public int PropertyId { get; set; }
@@ -17,8 +16,8 @@ namespace Property.Domain.Entities
         public bool hasBathroom { get; set; }
         public string Description { get; set; } = string.Empty;
         public bool ForStudentRent { get; set; } = false;
-        public float Price { get; set; }
-        public bool Available { get; set; }
+        public float Price { get; set; } = 0;
+        public bool Available { get; set; }=false;
 
         public ICollection<RoomSuppliesEntity> Rooms { get; set; } = new List<RoomSuppliesEntity>();
         public ICollection<RoomReservationEntity> RoomReservations { get; set; } = new List<RoomReservationEntity>();

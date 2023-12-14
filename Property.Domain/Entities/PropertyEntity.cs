@@ -6,14 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Property.Domain.Entities
 {
-    public class PropertyEntity
+    public class PropertyEntity :SeconderyEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id {  get; set; }
-        [ForeignKey("UserId")]
+        
+        [ForeignKey("PropertyOwnerId")]
         public UserEntity? Owner { get; set; }
-        public int UserId { get; set; }
+        public int PropertyOwnerId { get; set; }
         public PropertyType Type { get; set; }
         public int? Price { get; set; }
         public string Location { get; set; }
@@ -24,6 +22,6 @@ namespace Property.Domain.Entities
         public int NumberOfRooms { get; set; }
         public AppartmentEntity Appartment { get; set; }
         public ChaletEntity Chalet { get; set; }
-        public List<RoomEntity> Rooms { get; set; }
+        public ICollection<RoomEntity> Rooms { get; set; }=new List<RoomEntity>();
     }
 }

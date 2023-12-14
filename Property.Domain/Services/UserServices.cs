@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Property.API.Models;
+using Property.Domain.Models;
+
 using Property.Domain.Entities;
 using Property.Domain.Interfaces;
+using Property.Domain.Models.UserDtos;
 
-
-namespace Property.API.Services
+namespace Property.Domain.Services
 {
     public class UserServices
     {

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Property.Domain.Models.PropertyDtos;
+using Property.API.Models.PropertyDtos;
 using Property.Domain.Entities;
 
 namespace Property.API.Profiles

@@ -3,16 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Property.Domain.Entities
 {
-    public class RoomReservationEntity
+    public class RoomReservationEntity:SeconderyEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [Required]
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }  
-        public UserEntity? User { get; set; }
 
+        [ForeignKey("userfId")]
+        public UserEntity userf { get; set; }
+        public int userfId { get; set; }
+        
         [Required]
         [ForeignKey("RoomId")]
         public int RoomId { get; set; }

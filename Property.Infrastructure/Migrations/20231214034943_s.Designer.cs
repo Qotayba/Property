@@ -11,8 +11,8 @@ using Property.Infrastructure.DbContexts;
 namespace Property.Infrastructure.Migrations
 {
     [DbContext(typeof(PropertyContext))]
-    [Migration("20231129183221_firstOne")]
-    partial class firstOne
+    [Migration("20231214034943_s")]
+    partial class s
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,6 +25,12 @@ namespace Property.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("Floor")
                         .HasColumnType("INTEGER");
 
@@ -34,10 +40,20 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("PropertyId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
 
                     b.HasIndex("PropertyId")
                         .IsUnique();
+
+                    b.HasIndex("UpdatedByUserId");
 
                     b.ToTable("Appartments");
                 });
@@ -46,6 +62,12 @@ namespace Property.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("HaveJacuzzi")
@@ -69,10 +91,20 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("PropertyId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
 
                     b.HasIndex("PropertyId")
                         .IsUnique();
+
+                    b.HasIndex("UpdatedByUserId");
 
                     b.ToTable("Chalets");
                 });
@@ -81,6 +113,12 @@ namespace Property.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
@@ -104,18 +142,33 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int?>("Price")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("PropertyOwnerId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("TotalArea")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UserId")
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("UserEntityId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("PropertyOwnerId");
+
+                    b.HasIndex("UpdatedByUserId");
+
+                    b.HasIndex("UserEntityId");
 
                     b.ToTable("Properties");
                 });
@@ -130,6 +183,12 @@ namespace Property.Infrastructure.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("Available")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
@@ -148,12 +207,22 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("PropertyId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("hasBathroom")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedByUserId");
+
                     b.HasIndex("PropertyId");
+
+                    b.HasIndex("UpdatedByUserId");
 
                     b.ToTable("Rooms");
                 });
@@ -162,6 +231,12 @@ namespace Property.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("EndDate")
@@ -173,14 +248,24 @@ namespace Property.Infrastructure.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("userfId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedByUserId");
+
                     b.HasIndex("RoomId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UpdatedByUserId");
+
+                    b.HasIndex("userfId");
 
                     b.ToTable("RoomReservationEntity");
                 });
@@ -194,6 +279,12 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("AmountOfPayment")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("PayMethod")
                         .HasColumnType("INTEGER");
 
@@ -203,9 +294,19 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("RoomReservationId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedByUserId");
+
                     b.HasIndex("RoomReservationId");
+
+                    b.HasIndex("UpdatedByUserId");
 
                     b.ToTable("RoomReservationPaymentEntity");
                 });
@@ -214,6 +315,12 @@ namespace Property.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("RoomId")
@@ -225,11 +332,21 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("SupplyStatus")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
 
                     b.HasIndex("RoomId");
 
                     b.HasIndex("SupplyId");
+
+                    b.HasIndex("UpdatedByUserId");
 
                     b.ToTable("RoomSuppliesEntity");
                 });
@@ -240,6 +357,12 @@ namespace Property.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("CreatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -248,7 +371,17 @@ namespace Property.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UpdatedByUserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("UpdatedByUserId");
 
                     b.ToTable("SupplyEntity");
                 });
@@ -258,6 +391,9 @@ namespace Property.Infrastructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -279,6 +415,9 @@ namespace Property.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
@@ -289,80 +428,173 @@ namespace Property.Infrastructure.Migrations
 
             modelBuilder.Entity("Property.Domain.Entities.AppartmentEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.PropertyEntity", "Property")
                         .WithOne("Appartment")
                         .HasForeignKey("Property.Domain.Entities.AppartmentEntity", "PropertyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("Property");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.ChaletEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.PropertyEntity", "Property")
                         .WithOne("Chalet")
                         .HasForeignKey("Property.Domain.Entities.ChaletEntity", "PropertyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("Property");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.PropertyEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.UserEntity", "Owner")
-                        .WithMany("Properties")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("PropertyOwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Property.Domain.Entities.UserEntity", null)
+                        .WithMany("Properties")
+                        .HasForeignKey("UserEntityId");
+
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("Owner");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.RoomEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.PropertyEntity", "Property")
                         .WithMany("Rooms")
                         .HasForeignKey("PropertyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("Property");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.RoomReservationEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.RoomEntity", "Room")
                         .WithMany("RoomReservations")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Property.Domain.Entities.UserEntity", "User")
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Property.Domain.Entities.UserEntity", "userf")
                         .WithMany("RoomReservations")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("userfId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("Room");
 
-                    b.Navigation("User");
+                    b.Navigation("UpdatedByUser");
+
+                    b.Navigation("userf");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.RoomReservationPaymentEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.RoomReservationEntity", "RoomReservation")
                         .WithMany("RoomReservationPayments")
                         .HasForeignKey("RoomReservationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("RoomReservation");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.RoomSuppliesEntity", b =>
                 {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("Property.Domain.Entities.RoomEntity", "Room")
                         .WithMany("Rooms")
                         .HasForeignKey("RoomId")
@@ -375,9 +607,35 @@ namespace Property.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+
                     b.Navigation("Room");
 
                     b.Navigation("Supply");
+
+                    b.Navigation("UpdatedByUser");
+                });
+
+            modelBuilder.Entity("Property.Domain.Entities.SupplyEntity", b =>
+                {
+                    b.HasOne("Property.Domain.Entities.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Property.Domain.Entities.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Property.Domain.Entities.PropertyEntity", b =>

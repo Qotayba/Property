@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Property.API.Models.PropertyDtos;
 
 namespace Property.API.Models
 {
