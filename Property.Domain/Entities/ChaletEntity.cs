@@ -3,11 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Property.Domain.Entities
 {
-    public class ChaletEntity
+    public class ChaletEntity:SeconderyEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        
 
         [ForeignKey("PropertyId")]
         public PropertyEntity? Property { get; set; }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Property.API.Models;
+using Property.API.Models.PropertyDtos;
 using Property.Domain.Entities;
 
 namespace Property.API.Profiles
@@ -10,6 +10,9 @@ namespace Property.API.Profiles
         {
             CreateMap<PropertyEntity, PropertyDto>();
             CreateMap<PropertyDto, PropertyEntity>();
+            CreateMap<PropertyForCreatAppartmentDto, PropertyEntity>();
+            CreateMap <PropertyAppartmentRoomsDto, PropertyEntity>();
+            CreateMap<PropertyEntity, PropertyAppartmentRoomsDto>();
         }
     }
 }

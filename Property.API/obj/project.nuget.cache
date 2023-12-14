@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JnXW28Fo/DZ4EhLWeJvEYoj/Zra6CxFbzbaENd+xtSSN6XNTUtf2wp7U3jE4Z7i+ds2bzEmcLGFc8IFtla5DVQ==",
+  "dgSpecHash": "rqEiBnYZDEBcwlWodj3/n0Ad9hpb5dyupxRzRugTTiiLDrALGfPW+Fn1XM7/nfBUEOIZE301JP+Fs9dgRJ3n2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Qotayba\\Desktop\\courses\\training\\TrainingProject\\Property\\Property.API\\Property.API.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Qotayba\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Qotayba\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

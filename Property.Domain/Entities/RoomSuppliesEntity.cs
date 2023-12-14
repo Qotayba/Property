@@ -4,11 +4,9 @@ using Property.Domain.Enum;
 
 namespace Property.Domain.Entities
 {
-    public class RoomSuppliesEntity
+    public class RoomSuppliesEntity:SeconderyEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        
         public SupplyStatus SupplyStatus { get; set; }
 
         [ForeignKey("RoomId")]

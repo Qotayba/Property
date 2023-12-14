@@ -5,11 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Property.Domain.Entities
 {
     [Index(nameof(Email), IsUnique = true)]
-    public class UserEntity
+    public class UserEntity:BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -19,7 +17,10 @@ namespace Property.Domain.Entities
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
+        [Required]
         public string Phone { get; set; }
+
+       
         public ICollection<PropertyEntity> Properties { get; set; }=new List<PropertyEntity>();
 
         public ICollection<RoomReservationEntity> RoomReservations{ get; set; } = new List<RoomReservationEntity>();

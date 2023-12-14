@@ -3,7 +3,8 @@ using Property.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Property.API.Models
+
+namespace Property.Domain.Models.PropertyDtos
 {
     public class PropertyDto
     {
@@ -21,6 +22,8 @@ namespace Property.API.Models
         public string? PayMethod { get; set; }
         public int TotalArea { get; set; }
         public int NumberOfRooms { get; set; }
+
         
+
     }
 }

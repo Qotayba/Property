@@ -4,11 +4,9 @@ using Property.Domain.Enum;
 
 namespace Property.Domain.Entities
 {
-    public class RoomReservationPaymentEntity
+    public class RoomReservationPaymentEntity :SeconderyEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+       
         [Required]
         public DateTime PaymentTime { get; set; }
 

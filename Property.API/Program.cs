@@ -19,7 +19,9 @@ namespace Property.API
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<PropertyContext>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
             builder.Services.AddScoped<UserServices>();
+            builder.Services.AddScoped<PropertyService>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             var app = builder.Build();
 
