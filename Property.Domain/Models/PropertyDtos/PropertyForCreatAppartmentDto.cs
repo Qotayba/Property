@@ -1,9 +1,9 @@
-﻿using Property.API.Models.AppatmentDtos;
-using Property.API.Models.RoomDtos;
+﻿using Property.Domain.Models.AppatmentDtos;
+using Property.Domain.Models.RoomDtos;
 using Property.Domain.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace Property.API.Models.PropertyDtos
+namespace Property.Domain.Models.PropertyDtos
 {
     public class PropertyForCreatAppartmentDto
     {

@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using Property.Domain.Models;
-
 using Property.Domain.Entities;
 using Property.Domain.Interfaces;
 using Property.Domain.Models.UserDtos;

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Property.API.Models.RoomDtos
+namespace Property.Domain.Models.RoomDtos
 {
     public class RoomForCreationDto
     {

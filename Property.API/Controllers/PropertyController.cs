@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Property.API.Models.PropertyDtos;
-using Property.API.Services;
+using Property.Domain.Models.PropertyDtos;
+using Property.Domain.Services;
 using Property.Domain.Interfaces;
 
 namespace Property.API.Controllers
