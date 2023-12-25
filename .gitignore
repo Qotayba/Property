@@ -4,3 +4,6 @@
 
 /.vs/Property/FileContentIndex/4696d577-62b1-4fe3-8682-8a97ce91a855.vsidx
 *.vsidx
+Property.API\obj
+Property.Infrastructure\obj
+Property.Domain\obj
