@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Property.API.Models.PropertyDtos;
+using Property.Domain.Models.PropertyDtos;
 
 namespace Property.Domain.Models.UserDtos
 {

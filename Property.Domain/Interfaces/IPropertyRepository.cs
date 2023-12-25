@@ -9,7 +9,8 @@ namespace Property.Domain.Interfaces
 {
     public interface IPropertyRepository
     {
-        Task<PropertyEntity?> AddPropertyEntity(PropertyEntity propertyEntity);
-
+        Task<PropertyEntity?> AddPropertyWithAppartmentEntity(PropertyEntity propertyEntity);
+        Task<bool> PropertyExistsAsync(int id);
+        Task<PropertyEntity?> AddPropertyAsync(PropertyEntity propertyEntity);
     }
 }

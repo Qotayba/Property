@@ -16,12 +16,13 @@ namespace Property.Domain.Services
         }
         public async Task<IEnumerable<UserDto>> GetUsersAsync()
         {
-            var usersEntites = await _userRepository.GetUsersEntityAsync();
+            var usersEntites = await _userRepository.Get();
             return _mapper.Map<IEnumerable<UserDto>>(usersEntites);   
         }
-        public async Task<UserDto?> GetUserDtoAsync(int id) {
+        public async Task<UserDto?> GetUserDtoAsync(int id) 
+        {
 
-            var userEntity = await _userRepository.GetUserEntityByIdAsync(id, false);
+            var userEntity = await _userRepository.GetByIdAsync(id);
             return _mapper.Map<UserDto?>(userEntity);
         
         }
@@ -40,16 +41,23 @@ namespace Property.Domain.Services
         }
         public async Task<UserDto?> CreateUser(UserForCreationDto userForCreationDto) 
         {
-            var userEntityForCreate = _mapper.Map<UserEntity>(userForCreationDto);
-            _userRepository.AddUser(userEntityForCreate);
-            if (await _userRepository.SaveChangesAsync()==false) 
-            {
-
-                return null;
-            }
-            var userDto = _mapper.Map<UserDto>(userEntityForCreate);
+            var userEntity = _mapper.Map<UserEntity>(userForCreationDto);
+            await _userRepository.Insert(userEntity);
+            var userDto = _mapper.Map<UserDto>(userEntity);
             return userDto;
         
+        }
+
+        public async Task<UserDto?> UpdateUser(UserForUpdateDto userForUpdateDto,int userId)
+        {
+            var userEntity = await _userRepository.GetByIdAsync(userId);
+            if (userEntity == null) {
+                return null;
+            }
+            _mapper.Map(userForUpdateDto, userEntity);
+            var returnedUser=  await _userRepository.Update(userEntity);
+            return _mapper.Map<UserDto>(returnedUser);
+
         }
 
 

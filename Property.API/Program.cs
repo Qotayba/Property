@@ -1,5 +1,6 @@
-using Property.API.Services;
+
 using Property.Domain.Interfaces;
+using Property.Domain.Services;
 using Property.Infrastructure.DbContexts;
 using Property.Infrastructure.Repositories;
 
@@ -17,7 +18,8 @@ namespace Property.API
            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<PropertyContext>();
+            builder.Services.AddDbContext<DatabaseContext>();
+            
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
             builder.Services.AddScoped<UserServices>();

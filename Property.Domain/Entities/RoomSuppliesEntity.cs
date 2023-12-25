@@ -4,7 +4,7 @@ using Property.Domain.Enum;
 
 namespace Property.Domain.Entities
 {
-    public class RoomSuppliesEntity:SeconderyEntity
+    public class RoomSuppliesEntity:BaseEntity
     {
         
         public SupplyStatus SupplyStatus { get; set; }

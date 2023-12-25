@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using Property.API.Models.RoomDtos;
+
 using Property.Domain.Entities;
+using Property.Domain.Models.RoomDtos;
 
 namespace Property.API.Profiles
 {

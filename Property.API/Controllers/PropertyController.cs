@@ -27,5 +27,8 @@ namespace Property.API.Controllers
             return Ok(createdProperty);
         
         }
+
+        //[HttpPut("updateProperty")]
+        
     }
 }

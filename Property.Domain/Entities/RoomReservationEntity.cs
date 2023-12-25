@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Property.Domain.Entities
 {
-    public class RoomReservationEntity:SeconderyEntity
+    public class RoomReservationEntity:BaseEntity
     {
 
         [ForeignKey("userfId")]

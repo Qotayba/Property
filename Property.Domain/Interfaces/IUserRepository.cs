@@ -1,4 +1,5 @@
-﻿using Property.Domain.Entities;
+﻿
+using Property.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Property.Domain.Interfaces
 {
-    public  interface IUserRepository
+    public  interface IUserRepository: IRepository<UserEntity> 
     {
-        Task<IEnumerable<UserEntity>> GetUsersEntityAsync();
+        Task<IEnumerable<UserEntity>> GetUsersEntitiesAsync();
         Task<UserEntity?> GetUserEntityByIdAsync(int id , bool includeProperties);
         
         Task<bool> UserExists(int id);
         
         Task<bool> EmailExists(string email);
         Task<UserEntity?> GetUserByEmailAndPassword(string email, string password);
-        void AddUser(UserEntity user);
-        Task<bool> SaveChangesAsync();
+        
+       
 
 
     }
