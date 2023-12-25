@@ -4,7 +4,7 @@ using Property.Domain.Enum;
 
 namespace Property.Domain.Entities
 {
-    public class RoomReservationPaymentEntity :SeconderyEntity
+    public class RoomReservationPaymentEntity :BaseEntity
     {
        
         [Required]

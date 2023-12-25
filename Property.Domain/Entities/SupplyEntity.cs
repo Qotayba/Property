@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Property.Domain.Entities
 {
-    public class SupplyEntity:SeconderyEntity
+    public class SupplyEntity:BaseEntity
     {
        
        [Required]

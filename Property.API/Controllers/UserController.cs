@@ -52,6 +52,20 @@ namespace Property.API.Controllers
 
         }
 
+        [HttpPut("updateUser/{userId}")]
+        public async Task <ActionResult<UserDto>> updateUser(int userId, UserForUpdateDto user)
+        {
+            var userDto = await _userServices.UpdateUser(user, userId);
+
+            if (userDto == null)
+            {
+                return NotFound("User dose not exist");
+            }
+            return Ok(userDto); 
+        }
+        
+
+
 
     }
 }

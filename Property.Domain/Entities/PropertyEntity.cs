@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Property.Domain.Entities
 {
-    public class PropertyEntity :SeconderyEntity
+    public class PropertyEntity :BaseEntity
     {
         
         [ForeignKey("PropertyOwnerId")]

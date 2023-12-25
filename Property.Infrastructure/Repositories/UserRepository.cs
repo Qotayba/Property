@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace Property.Infrastructure.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository :Repository<UserEntity>, IUserRepository
     {
-        private readonly PropertyContext _context;
-        public UserRepository(PropertyContext context) {
+        private readonly DatabaseContext _context;
+        public UserRepository(DatabaseContext context):base(context) {
+            
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
@@ -31,11 +32,11 @@ namespace Property.Infrastructure.Repositories
 
         public async Task<UserEntity?> GetUserEntityByIdAsync(int id, bool includeProperties) 
         {
-            if (includeProperties) 
+            if (includeProperties)
             {
                 return await _context.Users
                     .Include(u => u.Properties)
-                    .FirstOrDefaultAsync(u => u.Id==id);
+                    .FirstOrDefaultAsync(u => u.Id == id);
             }
 
             return await _context.Users
@@ -43,7 +44,7 @@ namespace Property.Infrastructure.Repositories
                         
         }
 
-        public async Task<IEnumerable<UserEntity>> GetUsersEntityAsync()
+        public async Task<IEnumerable<UserEntity>> GetUsersEntitiesAsync()
         {
             return await _context.Users.ToListAsync();
         }
@@ -54,14 +55,6 @@ namespace Property.Infrastructure.Repositories
         }
 
 
-        public void AddUser(UserEntity user)
-        {
-            _context.Users.Add(user);
-        
-        }
-        public async Task<bool> SaveChangesAsync()
-        {
-            return (await _context.SaveChangesAsync() >= 0);
-        }
+     
     }
 }

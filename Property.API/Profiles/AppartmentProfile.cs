@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using Property.API.Models.AppatmentDtos;
+
 using Property.Domain.Entities;
+using Property.Domain.Models.AppatmentDtos;
 
 namespace Property.API.Profiles
 {
