@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Property.Domain.Entities;
 using Property.Domain.Enum;
 using Property.Domain.Interfaces;
@@ -15,8 +16,10 @@ namespace Property.Infrastructure.Repositories
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         DatabaseContext _context;
-        public Repository(DatabaseContext context) { 
+        private readonly ILogger<IRepository<T>> _logger;
+        public Repository(DatabaseContext context, ILogger<IRepository<T>> logger) { 
             _context = context;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
         public async Task<ICollection<T>> Get(List<Expression<Func<T, bool>>> filters = null)
         {
@@ -55,6 +58,7 @@ namespace Property.Infrastructure.Repositories
         {
             var _table = _context.Set<T>();
             item.UpdatedAt = DateTime.Now;
+            item.CreatedAt = DateTime.Now;
             await _table.AddAsync(item);
             await _context.SaveChangesAsync();
             return item;

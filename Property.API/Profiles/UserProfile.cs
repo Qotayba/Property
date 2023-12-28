@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 
 using Property.Domain.Entities;
+using Property.Domain.Models;
 using Property.Domain.Models.UserDtos;
 
 namespace Property.API.Profiles
@@ -13,6 +14,7 @@ namespace Property.API.Profiles
             CreateMap<UserEntity, UserWtihPropertiesDto>();
             CreateMap<UserForCreationDto, UserEntity>();
             CreateMap<UserForUpdateDto, UserEntity>();
+            CreateMap<UserEntity, UserInfoForToken>();
 
         }
 

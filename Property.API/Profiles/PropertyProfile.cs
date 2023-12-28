@@ -14,6 +14,9 @@ namespace Property.API.Profiles
             CreateMap<PropertyForCreatAppartmentDto, PropertyEntity>();
             CreateMap <PropertyAppartmentRoomsDto, PropertyEntity>();
             CreateMap<PropertyEntity, PropertyAppartmentRoomsDto>();
+            CreateMap<PropertyForCreationDto, PropertyEntity>();
+            CreateMap<PropertyEntity, PropertyForUpdateDto>();
+            CreateMap<PropertyForUpdateDto, PropertyEntity>();
         }
     }
 }

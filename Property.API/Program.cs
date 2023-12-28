@@ -3,6 +3,9 @@ using Property.Domain.Interfaces;
 using Property.Domain.Services;
 using Property.Infrastructure.DbContexts;
 using Property.Infrastructure.Repositories;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Serilog;
 
 namespace Property.API
 {
@@ -10,9 +13,17 @@ namespace Property.API
     {
         public static void Main(string[] args)
         {
+
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+             .WriteTo.Console()
+             .CreateLogger();
             var builder = WebApplication.CreateBuilder(args);
 
-            
+
+            builder.Host.UseSerilog();
+
+            builder.Services.AddLogging();
 
             builder.Services.AddControllers();
            
@@ -22,9 +33,26 @@ namespace Property.API
             
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
-            builder.Services.AddScoped<UserServices>();
+            builder.Services.AddScoped<IUserServices,UserServices>();
             builder.Services.AddScoped<PropertyService>();
+            builder.Services.AddScoped<AuthecationService>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            builder.Services.AddAuthentication("Bearer")
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = builder.Configuration["Authentication:Issuer"],
+                        ValidAudience = builder.Configuration["Authentication:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.ASCII.GetBytes(builder.Configuration["Authentication:SecretForKey"]))
+                    };
+                }
+                );
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,7 +68,7 @@ namespace Property.API
             }
             );
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
@@ -49,4 +77,5 @@ namespace Property.API
             app.Run();
         }
     }
+
 }

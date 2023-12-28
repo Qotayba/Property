@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Property.Domain.Interfaces
 {
-    public interface IPropertyRepository
+    public interface IPropertyRepository:IRepository<PropertyEntity>
     {
         Task<PropertyEntity?> AddPropertyWithAppartmentEntity(PropertyEntity propertyEntity);
         Task<bool> PropertyExistsAsync(int id);

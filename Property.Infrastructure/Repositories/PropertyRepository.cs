@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Property.Domain.Entities;
 using Property.Domain.Interfaces;
 using Property.Infrastructure.DbContexts;
@@ -11,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace Property.Infrastructure.Repositories
 {
-    public class PropertyRepository : IPropertyRepository
+    public class PropertyRepository :Repository<PropertyEntity>, IPropertyRepository
     {
         private readonly DatabaseContext _context;
-        public PropertyRepository(DatabaseContext context) {
+       
+        public PropertyRepository(DatabaseContext context, ILogger<PropertyRepository> logger) :base(context,logger) {
             _context= context ??throw new ArgumentNullException(nameof(context));
         }
 
@@ -45,6 +47,7 @@ namespace Property.Infrastructure.Repositories
             else { return null; }   
 
         }
+        
 
 
     }

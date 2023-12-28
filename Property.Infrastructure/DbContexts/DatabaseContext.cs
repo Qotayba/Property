@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Property.Domain.Entities;
 using System.Reflection.Metadata;
 
@@ -7,6 +8,8 @@ namespace Property.Infrastructure.DbContexts
 {
     public class DatabaseContext : DbContext
     {
+        private readonly ILoggerFactory _loggerFactory;
+
         public DbSet<UserEntity> Users { get; set; } = null!;
         public DbSet<PropertyEntity> Properties { get; set; } = null!;
         public DbSet<AppartmentEntity> Appartments { get; set; } = null!;
@@ -14,8 +17,18 @@ namespace Property.Infrastructure.DbContexts
         public DbSet<ChaletEntity> Chalets { get; set; } = null!;
         //public DbSet<RoomReservationEntity> RoomReservations { get; set; }= null!;
 
+        public DatabaseContext(DbContextOptions<DatabaseContext> options, ILoggerFactory loggerFactory)
+       : base(options)
+        {
+            _loggerFactory = loggerFactory;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (_loggerFactory != null)
+            {
+                optionsBuilder.UseLoggerFactory(_loggerFactory);
+            }
+
             optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Property", b => b.MigrationsAssembly("Property.Infrastructure"));
             base.OnConfiguring(optionsBuilder);
         }
