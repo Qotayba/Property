@@ -11,9 +11,7 @@ namespace Property.Domain.Models.PropertyDtos
 
         
         public int Id { get; set; }
-        
-        
-        public int UserId { get; set; }
+        public int PropertyOwnerId { get; set; }
         public PropertyType Type { get; set; }
         public int? Price { get; set; }
         public string Location { get; set; }

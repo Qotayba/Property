@@ -11,12 +11,15 @@ namespace Property.API.Controllers
     [Route("api/users/")]
     public class UserController:ControllerBase
     {
-        private readonly UserServices _userServices;
+        private readonly IUserServices _userServices;
+        private readonly AuthecationService _authecationService;
         private readonly IMapper _mapper;
-        public UserController(UserServices userServices, IMapper mapper)
+        public UserController(
+            IUserServices userServices, IMapper mapper, AuthecationService authecationService)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _userServices = userServices ?? throw new ArgumentNullException(nameof(userServices));
+            _authecationService = authecationService?? throw new ArgumentNullException(nameof(authecationService));
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers() { 
@@ -63,6 +66,18 @@ namespace Property.API.Controllers
             }
             return Ok(userDto); 
         }
+        [HttpPost("login")]
+        public async Task<ActionResult<string>> login(
+            UserCredentialsForLoginDto userCredentialsForLoginDto)
+        {
+            var token = await _authecationService.Authenticate(userCredentialsForLoginDto);
+            if (token == null) 
+            {
+                return NotFound();
+            }  
+            return Ok(token);
+        }
+
         
 
 

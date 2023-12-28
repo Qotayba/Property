@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Property.Domain.Entities;
 using Property.Domain.Interfaces;
 using Property.Infrastructure.DbContexts;
@@ -13,7 +14,7 @@ namespace Property.Infrastructure.Repositories
     public class UserRepository :Repository<UserEntity>, IUserRepository
     {
         private readonly DatabaseContext _context;
-        public UserRepository(DatabaseContext context):base(context) {
+        public UserRepository(DatabaseContext context, ILogger<UserRepository> logger) :base(context,logger) {
             
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
