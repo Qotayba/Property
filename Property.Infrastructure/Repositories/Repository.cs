@@ -54,6 +54,12 @@ namespace Property.Infrastructure.Repositories
             var query= await _table.FirstOrDefaultAsync(t=>t.Id == id);
             return query;    
         }
+        public async Task<bool> EntityExsist(int Id) 
+        {
+            var _table = _context.Set<T>();
+            var query= await _table.AnyAsync(e=>e.Id == Id);
+            return query;
+        }
         public async Task<T> Insert(T item)
         {
             var _table = _context.Set<T>();

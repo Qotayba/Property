@@ -13,7 +13,7 @@ namespace Property.Domain.Models.PropertyDtos
 {
     public class PropertyForUpdateDto
     {
-
+        public int UpdatedByUserId { get; set; }
         [Required]
         public PropertyType Type { get; set; }
         [Required]

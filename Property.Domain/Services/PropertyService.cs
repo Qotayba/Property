@@ -2,6 +2,7 @@
 using Property.Domain.Models.PropertyDtos;
 using Property.Domain.Entities;
 using Property.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Property.Domain.Services
 {
@@ -27,17 +28,35 @@ namespace Property.Domain.Services
             var propertyDtoToReturn =_mapper.Map<PropertyDto>(propertyEntity);
             return propertyDtoToReturn;
         }
-        public async Task<PropertyAppartmentRoomsDto?> CreateAppartment(PropertyForCreatAppartmentDto forCreatAppartmentDto)
+        public async Task<bool?> checkIfPropertyHasAlreadyType (int id)
         {
-
-            var propertyEntity = _mapper.Map<PropertyEntity>(forCreatAppartmentDto);
-            var createdPropertyEntity = await _repository.AddPropertyWithAppartmentEntity(propertyEntity);
-            if (createdPropertyEntity == null)
+            var propertyEntity = await _repository.GetAsQueryable()
+                 .Include(p => p.Appartment)
+                 .Include(p => p.Chalet)
+                 .Where(p => p.Id == id).FirstOrDefaultAsync();
+            
+            if (propertyEntity==null) 
             {
                 return null;
             }
-            return _mapper.Map<PropertyAppartmentRoomsDto>(createdPropertyEntity);
+            if(propertyEntity.Appartment==null&&propertyEntity.Chalet==null) 
+            {
+                return true;
+            }
+            return false;
+
         }
+        //public async Task<PropertyAppartmentRoomsDto?> CreateAppartment(PropertyForCreatAppartmentDto forCreatAppartmentDto)
+        //{
+
+        //    var propertyEntity = _mapper.Map<PropertyEntity>(forCreatAppartmentDto);
+        //    var createdPropertyEntity = await _repository.AddPropertyWithAppartmentEntity(propertyEntity);
+        //    if (createdPropertyEntity == null)
+        //    {
+        //        return null;
+        //    }
+        //    return _mapper.Map<PropertyAppartmentRoomsDto>(createdPropertyEntity);
+        //}
         public async Task<PropertyDto?> UpdateProperty(
           int id ,  PropertyForUpdateDto propertyForUpdateDto)
         {
@@ -46,14 +65,29 @@ namespace Property.Domain.Services
             {
                 return null;
             }
-            _mapper.Map(propertyForUpdateDto,propertyEntity);
-            var propertyEntityAfterUpdate =await  _repository.Update(propertyEntity);
+            _mapper.Map(propertyForUpdateDto,propertyEntity); 
+            var propertyEntityAfterUpdate=_repository.Update(propertyEntity);
             
             var propertyDto=_mapper.Map<PropertyDto>(propertyEntity);
             return propertyDto;
         
         }
-        
+        public async Task<PropertyDto?> DeleteProperty(int id)
+        {
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity== null)
+            {
+                return null;
+            }
+            await _repository.Remove(entity);
+            return _mapper.Map<PropertyDto>(entity);
 
+
+        }
+
+        public async Task<bool> PropertyExists(int id)
+        {
+            return await _repository.EntityExsist(id);
+        }
     }
 }

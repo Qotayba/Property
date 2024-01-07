@@ -17,5 +17,6 @@ namespace Property.Domain.Interfaces
         Task<ICollection<T>> Get(List<Expression<Func<T, bool>>> filters = null);
         IQueryable<T> GetAsQueryable(List<Expression<Func<T, bool>>> filters = null);
         Task<T?> GetByIdAsync(int id);
+        Task<bool> EntityExsist(int Id);
     }
 }
