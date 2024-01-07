@@ -33,8 +33,12 @@ namespace Property.API
             
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+            builder.Services.AddScoped<IApparmentRepository,AppartmentRepository>();
+            
+            
             builder.Services.AddScoped<IUserServices,UserServices>();
-            builder.Services.AddScoped<PropertyService>();
+            builder.Services.AddScoped<IPropertyService,PropertyService>();
+            builder.Services.AddScoped<IAppatmentService,AppartmentService>();
             builder.Services.AddScoped<AuthecationService>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

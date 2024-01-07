@@ -10,6 +10,8 @@ namespace Property.API.Profiles
         public AppartmentProfile() {
 
             CreateMap<AppartmentForCreationDto, AppartmentEntity>();
+            CreateMap<AppartmentForUpdateDto,AppartmentEntity>();
+            CreateMap<AppartmentEntity,AppartmentDto>();
             CreateMap<AppartmentEntity, AppartmentGenralInfoDto>();
             
         }  

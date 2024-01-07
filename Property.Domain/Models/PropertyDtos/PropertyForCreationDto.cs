@@ -1,6 +1,7 @@
 ﻿using Property.Domain.Enum;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace Property.Domain.Models.PropertyDtos
     public class PropertyForCreationDto
     {
         public int CreatedByUserId { get; set; }
+        [Required]
         public int PropertyOwnerId { get; set; }
         public PropertyType Type { get; set; }
         public int? Price { get; set; }
